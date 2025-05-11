@@ -86,36 +86,38 @@ class _MeditateScreenState extends State<MeditateScreen> {
                         selectIndex = index;
                         setState(() {});
                       },
-                      child: Column(children: [
-                        Container(
-                          width: 55,
-                          height: 55,
-                          decoration: BoxDecoration(
-                              color: selectIndex ==                                   index
-                                  ? TColor.primary
-                                  : const Color(0xffA0A3B1),
-                              borderRadius: BorderRadius.circular(20)),
-                          alignment: Alignment.center,
-                          child: Image.asset(
-                            cObj["icon"]  ,
-                            width: 25,
-                            height: 25,
-                            color: Colors.white ,
+                      child: SingleChildScrollView(
+                        child: Column(children: [
+                          Container(
+                            width: 55,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                color: selectIndex ==                                   index
+                                    ? TColor.primary
+                                    : const Color(0xffA0A3B1),
+                                borderRadius: BorderRadius.circular(20)),
+                            alignment: Alignment.center,
+                            child: Image.asset(
+                              cObj["icon"]  ,
+                              width: 25,
+                              height: 25,
+                              color: Colors.white ,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          cObj["title"],
-                          style: TextStyle(
-                            color: selectIndex == index ? TColor.primary
-                                : TColor.secondaryText,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                          const SizedBox(
+                            height: 4,
                           ),
-                        )
-                      ]),
+                          Text(
+                            cObj["title"],
+                            style: TextStyle(
+                              color: selectIndex == index ? TColor.primary
+                                  : TColor.secondaryText,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          )
+                        ]),
+                      ),
                     );
                   },
                   separatorBuilder: (context, index) => const SizedBox(

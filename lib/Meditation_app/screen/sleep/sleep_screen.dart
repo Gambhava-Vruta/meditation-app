@@ -123,37 +123,39 @@ class _SleepScreenState extends State<SleepScreen> {
                                 selectIndex = index;
                                 setState(() {});
                               },
-                              child: Column(children: [
-                                Container(
-                                  width: 55,
-                                  height: 55,
-                                  decoration: BoxDecoration(
+                              child: SingleChildScrollView(
+                                child: Column(children: [
+                                  Container(
+                                    width: 55,
+                                    height: 55,
+                                    decoration: BoxDecoration(
+                                        color: selectIndex == index
+                                            ? TColor.primary
+                                            : const Color(0xff586894),
+                                        borderRadius: BorderRadius.circular(20)),
+                                    alignment: Alignment.center,
+                                    child: Image.asset(
+                                      cObj["icon"],
+                                      width: 25,
+                                      height: 25,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 4,
+                                  ),
+                                  Text(
+                                    cObj["title"],
+                                    style: TextStyle(
                                       color: selectIndex == index
                                           ? TColor.primary
-                                          : const Color(0xff586894),
-                                      borderRadius: BorderRadius.circular(20)),
-                                  alignment: Alignment.center,
-                                  child: Image.asset(
-                                    cObj["icon"],
-                                    width: 25,
-                                    height: 25,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                const SizedBox(
-                                  height: 4,
-                                ),
-                                Text(
-                                  cObj["title"],
-                                  style: TextStyle(
-                                    color: selectIndex == index
-                                        ? TColor.primary
-                                        : TColor.secondaryText,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                )
-                              ]),
+                                          : TColor.secondaryText,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                  )
+                                ]),
+                              ),
                             );
                           },
                           separatorBuilder: (context, index) => const SizedBox(
@@ -259,41 +261,43 @@ class _SleepScreenState extends State<SleepScreen> {
                   onTap: () {
                     context.push(const SleepStoriesDetailScreen());
                   },
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          cObj["image"],
-                          width: double.maxFinite,
-                          height: context.width * 0.3,
-                          fit: BoxFit.cover,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            cObj["image"],
+                            width: double.maxFinite,
+                            height: context.width * 0.3,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      ),
-                      Text(
-                        cObj["title"],
-                        maxLines: 1,
-                        style: TextStyle(
+                        const SizedBox(
+                          height: 8,
+                        ),
+                        Text(
+                          cObj["title"],
+                          maxLines: 1,
+                          style: TextStyle(
+                              color: TColor.sleepText,
+                              fontSize: 10,
+                              fontWeight: FontWeight.w700),
+                        ),
+                        const SizedBox(
+                          height: 4,
+                        ),
+                        Text(
+                          cObj["subtitle"],
+                          maxLines: 1,
+                          style: TextStyle(
                             color: TColor.sleepText,
-                            fontSize: 10,
-                            fontWeight: FontWeight.w700),
-                      ),
-                      const SizedBox(
-                        height: 4,
-                      ),
-                      Text(
-                        cObj["subtitle"],
-                        maxLines: 1,
-                        style: TextStyle(
-                          color: TColor.sleepText,
-                          fontSize: 12,
+                            fontSize: 12,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 );
               },

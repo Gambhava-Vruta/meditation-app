@@ -374,34 +374,36 @@ class _HomeScreenState extends State<HomeScreen> {
                       var rObj = rArr[index];
                       return SizedBox(
                         width: context.width * 0.35,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              rObj["image"],
-                              width: context.width * 0.35,
-                              height: context.width * 0.35 * 0.7,
-                            ),
-                            const SizedBox(
-                              height: 5,
-                            ),
-                            Text(
-                              rObj["title"],
-                              style: TextStyle(
-                                color: TColor.primaryText,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w600,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                rObj["image"],
+                                width: context.width * 0.35,
+                                height: context.width * 0.35 * 0.7,
                               ),
-                            ),
-                            const SizedBox(
-                              height: 4,
-                            ),
-                            Text(
-                              rObj["subtitle"],
-                              style: TextStyle(
-                                  color: TColor.primaryText, fontSize: 11),
-                            ),
-                          ],
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                rObj["title"],
+                                style: TextStyle(
+                                  color: TColor.primaryText,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 4,
+                              ),
+                              Text(
+                                rObj["subtitle"],
+                                style: TextStyle(
+                                    color: TColor.primaryText, fontSize: 11),
+                              ),
+                            ],
+                          ),
                         ),
                       );
                     },

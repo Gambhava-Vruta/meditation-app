@@ -80,39 +80,39 @@ class _MusicScreenState extends State<MusicScreen> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.asset(
-                  cObj["image"],
-                  width: double.maxFinite,
-                  height: context.width * 0.3,
-                  fit: BoxFit.cover,
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.asset(
+                    cObj["image"],
+                    width: double.maxFinite,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
-              const SizedBox(
-                height: 8,
-              ),
+              const SizedBox(height: 8),
               Text(
                 cObj["title"],
                 maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
-                    color: TColor.sleepText,
-                    fontSize: 11,
-                    fontWeight: FontWeight.w700),
-              ),
-              const SizedBox(
-                height: 4,
+                  color: TColor.sleepText,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               Text(
                 cObj["subtitle"],
                 maxLines: 1,
+                overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   color: TColor.sleepText,
-                  fontSize: 12,
+                  fontSize: 8,
                 ),
               ),
             ],
           );
+
         },
         itemCount: listArr.length,
       ),
