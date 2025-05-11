@@ -40,7 +40,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     height: 50,
                   ),
                   Text(
-                    "Hi Afsar, Welcome",
+                    "Hey, Welcome",
                     style: TextStyle(
                       color: TColor.primaryTextw,
                       fontSize: 30,

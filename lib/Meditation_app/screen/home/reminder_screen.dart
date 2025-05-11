@@ -4,6 +4,7 @@ import 'package:flutter_project/Meditation_app/common/color_extension.dart';
 import 'package:flutter_project/Meditation_app/common_widget/circle_button.dart';
 import 'package:flutter_project/Meditation_app/common_widget/round_button.dart';
 import 'package:flutter_project/Meditation_app/screen/home/home_screen.dart';
+import 'package:flutter_project/Meditation_app/screen/main_Tableview/main_tabview_screen.dart';
 
 class RemindersScreen extends StatefulWidget {
   const RemindersScreen({super.key});
@@ -116,7 +117,7 @@ class _RemindersScreenState extends State<RemindersScreen> {
                   ),
                 ),
                 RoundButton(title: "SAVE", onPressed: () {
-                  context.push(const HomeScreen());
+                  context.push(const MainTabViewScreen());
 
                   // context.push(const MainTabViewScreen());
                 }),

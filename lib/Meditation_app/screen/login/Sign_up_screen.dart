@@ -490,7 +490,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ),
               RoundButton(
                 title: "Get started",
-                onPressed: _signup,
+                onPressed:(){ _signup;
+                context.push( const WelcomeScreen());
+
+                },
+
               ),
               const Spacer(),
             ],

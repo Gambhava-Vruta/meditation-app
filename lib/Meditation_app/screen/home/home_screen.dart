@@ -60,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Good Morning, Afsar",
+                      "Good Morning,",
                       style: TextStyle(
                         color: TColor.primaryText,
                         fontSize: 24,

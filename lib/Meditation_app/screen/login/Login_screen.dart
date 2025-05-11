@@ -443,7 +443,10 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 20),
               RoundButton(title: "LOG IN", onPressed: _login),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.push( const WelcomeScreen());
+
+                },
                 child: Text(
                   "Forgot Password?",
                   style: TextStyle(
